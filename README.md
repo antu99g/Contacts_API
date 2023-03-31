@@ -38,7 +38,7 @@ To run this project, run the following command
 #### Pagination and Filtration
 | Task | Params | Description |
 | :- | :- | :- |
-| Paginate results of GET request | ?page=1&limit=10 | Number of results can be mentioned with limit only and without the page field. Previous and next page directions will be sent in response if page field mentioned in params. |
-| Filtering results of GET request | ?contact=123&username=xyz | Filteration can be done with one or both the fields. Filtered results can also be paginated. |
+| Paginate results of `GET` request | ?page=1&limit=10 | Number of results can be mentioned with limit only and without the page field. Previous and next page directions will be sent in response if page field mentioned in params. |
+| Filtering results of `GET` request | ?contact=123&username=xyz | Filteration can be done with one or both the fields. Filtered results can also be paginated. |
 
 #### Note : Pagination and filtration both are optional, all contacts can be fetched directly without any params.

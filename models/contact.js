@@ -4,7 +4,6 @@ const contactSchema = new mongoose.Schema({
    contact: {
       type: Number,
       required: true,
-      unique: true
    },
    username: {
       type: String,

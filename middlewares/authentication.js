@@ -13,8 +13,13 @@ module.exports.verifyUser = async function (req, res, next) {
       const decoded = jwt.verify(bearerToken, process.env.CONTACTS_API_JWT_SECRET);
 
       const contact = await Contact.findById(decoded.id); // searching for contact with id
-
-      if (contact) {next()}
+      
+      if (contact) {
+         req.loggedUserId = contact._id;
+         next();
+      } else {
+         throw new Error("Couldn't find contact");
+      }
       
    }catch(err){
       return res.status(401).json({

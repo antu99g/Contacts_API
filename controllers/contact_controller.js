@@ -117,10 +117,11 @@ module.exports.updateContact = async function (req, res) {
 module.exports.deleteContact = async function (req, res) {
    try {
       await Contact.findByIdAndDelete(req.params.id);
-
+      
       return res.status(200).json({
          success: true,
-         message: 'Contact deleted successfully'
+         message: 'Contact deleted successfully',
+         warning: req.params.id==loggedUserId ? 'You have deleted your own contact. You need to login again.' : ''
       });
    } catch (err) {
       return res.json({
